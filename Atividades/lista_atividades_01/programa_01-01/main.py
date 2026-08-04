@@ -1,19 +1,38 @@
-# declaração de variáveis
-nome = input("Digite seu nome: ")
-altura = float(input("Informo a sua altura:").replace (",","."))
-peso = float(input("Informo seu peso:").replace (",",".")) 
-imc = peso / (altura ** 2)
+# importa biblioteca os
+import os
 
-if imc < 16.5: resultado = "abaixo do peso"
-elif 16.5 <= imc <25.9: resultado = "peso normal"
-elif 26 <= imc <29.9: resultado = "sobrepeso"
-elif 30 <= imc <35.9: resultado = "obesidade Grau 1"
-elif 36 <= imc <39.9: resultado = "obesidade Grau 2"
-elif 40 <= imc <45.9: resultado = "obesidade Grau 3"
-else: resultado = "obesidade morbida"
+# limpa tela do terminal
+os.system("cls" if os.name == "nt" else "clear")
 
-print(f"Seu nome: {nome}")
-print(f"Sua altura: {altura} m")
-print(f"Sua peso:{peso} kg")
-print(f"imc é: {imc:.2f}")
-print(f"resultado: {resultado}")
+# entrada de dados
+nome = input("Digite seu nome: ").strip()
+peso = float(input("Digite seu peso (em kg): ").replace(",", "."))
+altura = float(input("Digite sua altura (em metros): ").replace(",", "."))
+
+# calcula o IMC
+imc = peso/(altura**2)
+
+os.system("cls" if os.name == "nt" else "clear")
+
+# informa o IMC na tela
+print(f"Olá {nome}, seu IMC é: {imc:.2f}")
+
+# verifica o valor do IMC e informa o diagnóstico
+if imc < 18.5:
+    print("Você está abaixo do peso.")
+elif imc < 25:
+    print("Você está com o peso normal.")
+elif imc < 30:
+    print("Você está com sobrepeso.")
+elif imc < 35:
+    print("Você está com obesidade grau I.")
+elif imc < 40:
+    print("Você está com obesidade grau II.")
+else:
+    print("Você está com obesidade mórbida.")
+
+# TODO: atividade 01
+"""
+Crie um programa que receba o nome, peso e altura do usuário, e informe na tela o seu IMC o seu diagnóstico com base no valor do IMC.
+"""
+# NOTE: imc = peso/(altura**2)
