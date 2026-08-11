@@ -1,0 +1,12 @@
+[
+    {
+        "nome": "kelly",
+        "notas": [
+            7.0,
+            3.0,
+            8.0
+        ],
+        "media": 6.0,
+        "situacao": "Reprovado"
+    }
+]
