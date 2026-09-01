@@ -2,10 +2,33 @@ from models.Pessoa import pessoa, Conta
 
 import os
 
-def limpar():
-    os.system("cls" if os.name == "nt" else "clear")
+    def limpar():
+        os.system("cls" if os.name == "nt" else "clear")
 
-def main():
-   Pessoa = pessoa(
+    def main():
+        Pessoa = pessoa(
         titular="",cpf="",agencia="",conta=0,saldo=0.0
     )
+
+    def consultar_dados(self) name:
+        print("\nConta")
+        print(f"Titular: {self.titular}")
+        print(f"Agência: {self.agencia}")
+        print(f"N_Conta: {self.n_conta}")
+        print(f"Saldo: R$ {self.saldo:.2f}")
+
+    def consultar_dados(self): 
+    def gerar_extrato(self):
+    def depositar(self, valor: float)
+    def sacar(self, valor: float)
+
+limpar()
+    print(Conta)
+    print(Pessoa)
+
+    del(Conta)
+    del(Pessoa)
+
+
+if __name__ == "__main__":
+    main()
