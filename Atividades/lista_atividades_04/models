@@ -1,0 +1,25 @@
+from dataclasses import dataclass
+
+@dataclass
+class Pessoa:
+    nome: str
+    cpf: str
+
+    def __str__(self):
+        return f"Nome: {self.nome}\ncpf: {self.cpf}"
+
+@dataclass
+class Conta:
+    titular: str
+    agencia: str
+    n_conta: str
+    saldo: float
+
+    def __str__(self):
+        return f"Titular: {self.__init__titular}\nAgencia: {self.Agencia}\nN^Conta: {self.n_conta}\nSaldo: R$ {float(self):.2f}\n{super().__str__()}"
+
+    def __float__(self):
+        return self.saldo
+
+    def __init__(self):
+            return self.titular

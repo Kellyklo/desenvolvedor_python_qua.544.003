@@ -1,0 +1,11 @@
+from models.Pessoa import pessoa, Conta
+
+import os
+
+def limpar():
+    os.system("cls" if os.name == "nt" else "clear")
+
+def main():
+   Pessoa = pessoa(
+        titular="",cpf="",agencia="",conta=0,saldo=0.0
+    )
