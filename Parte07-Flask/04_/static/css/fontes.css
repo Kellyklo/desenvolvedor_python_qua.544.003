@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Estrela';
+    src: url(../fonts/Coolvetic.otf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+h1 {
+    font-family: Estrela, Helvetica, sans-serif;
+}
