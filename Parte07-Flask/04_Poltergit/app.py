@@ -11,7 +11,7 @@ def index():
 
 @app.route("/commitar", methods = ['GET','POST'] )
 def commitar():
-    hoje = date.today().strftime("%d/%m/m%Y")
+    hoje = date.today().strftime("%d/%m/%Y")
     msg = None
     repositorio = None
     if request.method == "POST":
