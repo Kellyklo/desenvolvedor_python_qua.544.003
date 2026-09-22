@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
     <div class="container">
-        <div class="row justify-content-center align-items-cneter min-vh-content">
+        <div class="row justify-content-center align-items-center min-vh-content">
             <div class="col-md-6">
                 <div class="card p-4 shadow-lg">
                     <img src="{{ url_for('static',filename='img/magnifier.png')}}" alt="Logo OCR" class="img-fluid mx-auto d-block mb-4" width="200">                    
                     <h3 class="card-title text-center mb-4">
                         Extraia um texto de uma imagem aqui
                     </h3>
-                    <form action="multipart/form-data">
-                        <div class=""mb-3>
-                            <label for="imagem"class="form-label">
+                    <form action="/textoExtraido" method="POST" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="imagem" class="form-label">
                                 Selecione uma imagem>
                             </label>
                             <input type="file" class="form-control" name="imagem" accept="img/*" value="" required>       
                         </div>
-                        <button type="submit" class="btn btn-success w-100>"
+                        <button type="submit" class="btn btn-success w-100">
                             Extrair texto
                         </button>
                     </form>
@@ -23,4 +23,4 @@
             </div>
         </div>
     </div>
-{% endblock %}
+{%endblock %}
