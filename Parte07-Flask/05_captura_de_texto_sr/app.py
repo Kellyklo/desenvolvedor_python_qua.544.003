@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, send_file
+from translate import Translator
 import easyocr
 
 import io
@@ -27,8 +28,21 @@ def exportar_texto():
     if request.method == 'POST':
         texto = request.form.get("texto", "")
         arquivo_buffer = io.BytesIO(texto.encode('utf-8'))
-        return send_file(arquivo_buffer, mimetype= 'text/plain', as_attachment=True, download_name='texto_extraido.txt')
+        return send_file(arquivo_buffer, 
+                        mimetype= 'text/plain',
+                        as_attachment=True, 
+                        download_name='texto_extraido.txt'
+                        )
     return render_template("exportar_sucesso.html")
+
+@app.route("/traducao", methods = ['POST'])
+def traduzir():
+    tradutor = Translator(to_lang="pt")
+    if request.method == "POST":
+        texto = request.form.get("texto", "")
+        texto_traduzido = tradutor.translate(texto)
+        return render_template("extracao.html", texto=texto_traduzido)
+    return render_template("extracao.htmal",texto="")
 
 
 if __name__ == "__main__":
